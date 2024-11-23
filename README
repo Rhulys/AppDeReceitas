@@ -1,0 +1,110 @@
+# **Aplicativo de Receitas**
+
+Um sistema completo para gerenciar receitas, permitindo **busca**, **adição**, **edição** e **remoção** de receitas, com frontend em **Next.js** e backend em **GraphQL** com **MongoDB**.
+
+## **Funcionalidades**
+
+- **Busca de receitas:** Encontre receitas rapidamente pelo título ou descrição.
+- **Adicionar receita:** Insira novas receitas com título, descrição, ingredientes e modo de preparo.
+- **Editar receita:** Atualize as informações de uma receita existente.
+- **Remover receita:** Exclua receitas do sistema.
+- **Interface moderna e responsiva** com animações utilizando `framer-motion`.
+
+## **Tecnologias Utilizadas**
+
+### **Frontend**
+- **Next.js 13** com App Router
+- **Apollo Client** para integração com o backend
+- **TypeScript** para tipagem estática
+- **CSS Tailwind** para estilização
+- **framer-motion** para animações
+
+### **Backend**
+- **Node.js** com **Express**
+- **Apollo Server** para GraphQL
+- **MongoDB** com **Mongoose** para banco de dados
+
+## **Como Rodar o Projeto**
+
+### **Pré-requisitos**
+- Node.js v16+ instalado
+- MongoDB rodando localmente ou em um serviço online como Atlas
+
+### **Instalação**
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+
+	2.	Instale as dependências do backend:
+
+cd backend
+npm install
+
+
+	3.	Instale as dependências do frontend:
+
+cd ../frontend
+npm install
+
+
+
+Configuração
+
+	1.	No diretório backend, crie um arquivo .env com a conexão do MongoDB:
+
+MONGO_URI=mongodb://seu-usuario:senha@localhost:27017/nome-do-banco
+
+
+	2.	No diretório frontend, configure o Apollo Client para apontar para o servidor GraphQL no arquivo ApolloClient.ts:
+
+const client = new ApolloClient({
+    uri: "http://localhost:4000/graphql",
+    cache: new InMemoryCache(),
+});
+export default client;
+
+
+
+Rodando o Projeto
+
+	1.	Inicie o backend:
+
+cd backend
+npm run dev
+
+
+	2.	Inicie o frontend:
+
+cd ../frontend
+npm run dev
+
+
+	3.	Acesse o projeto no navegador:
+
+http://localhost:3000
+
+
+
+Estrutura do Projeto
+
+backend/
+├── schema.ts          # Definições do schema GraphQL
+├── server.ts          # Configuração do servidor Apollo
+├── package.json       # Dependências do backend
+└── .env               # Configuração do MongoDB
+
+frontend/
+├── app/
+│   ├── components/
+│   │   ├── ListaReceitas.tsx # Listagem de receitas
+│   ├── page.tsx             # Página inicial
+│   ├── addReceitas          # Página de adição de receitas
+│   ├── updateReceitas       # Página de edição de receitas
+├── ApolloClient.ts          # Configuração do Apollo Client
+├── package.json             # Dependências do frontend
+└── styles/                  # Estilos globais
+
+Contribuição
+
+Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias e correções
